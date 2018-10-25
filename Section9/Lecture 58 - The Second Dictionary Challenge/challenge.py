@@ -50,7 +50,7 @@ while True:
         allExits = locations[loc]["exits"].copy()
         allExits.update(locations[loc]["namedExits"])
  
-    direction = input("Available exits are " + availableExits).upper()
+    direction = input("Available exits are " + availableExits + " ").upper()
     print()
  
     # Parse the user input, using our vocabulary dictionary if necessary
