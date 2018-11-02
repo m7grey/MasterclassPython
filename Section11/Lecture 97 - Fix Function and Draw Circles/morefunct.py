@@ -15,11 +15,12 @@ def parabola(page, size):
 
 def circle(page, radius, g, h):
     for x in range(g, g + radius):
-        y = h + (math.sqrt(radius ** 2 - ((x-g) ** 2)))
+        y = h + (math.sqrt(radius ** 2 - ((x - g) ** 2)))
         plot(page, x, y)
         plot(page, x, 2 * h - y)
         plot(page, 2 * g - x, y)
-        plot(page, 2 * g - x, 2 * h  - y)
+        plot(page, 2 * g - x, 2 * h - y)
+
 
 def draw_axes(page):
     page.update()
@@ -33,6 +34,7 @@ def draw_axes(page):
 
 def plot(page, x, y):
     page.create_line(x, -y, x + 1, -y + 1, fill="red")
+
 
 mainWindow = tkinter.Tk()
 
