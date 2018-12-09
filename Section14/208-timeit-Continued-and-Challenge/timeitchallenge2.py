@@ -25,3 +25,8 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
+
+
+if __name__ == "__main__":
+    print(timeit.timeit("x = fact(130)", setup="from __main__ import fact", number=10000))
+    print(timeit.timeit("x = factorial(130)", setup="from __main__ import factorial", number=10000))
