@@ -9,8 +9,7 @@
 # of one million will take a long time to run.
 
 import timeit
-
-
+fact_test = """\
 def fact(n):
     result = 1
     if n > 1:
@@ -18,10 +17,22 @@ def fact(n):
             result *= f
     return result
 
+x = fact(130)
+"""
 
+factorial_test = """\
 def factorial(n):
     # n! can also be defined as n * (n-1)!
     if n <= 1:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
+
+
+
+
+y = factorial(130)
+"""
+
+print(timeit.timeit(fact_test, number=10000))
+print(timeit.timeit(factorial_test, number=10000))
