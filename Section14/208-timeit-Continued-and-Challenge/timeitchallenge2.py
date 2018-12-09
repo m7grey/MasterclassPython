@@ -9,6 +9,7 @@
 # of one million will take a long time to run.
 
 import timeit
+from statistics import mean, stdev
 
 
 def fact(n):
@@ -24,9 +25,12 @@ def factorial(n):
     if n <= 1:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
 
 
 if __name__ == "__main__":
-    print(timeit.repeat("x = fact(130)", setup="from __main__ import fact", number=10000))
-    print(timeit.repeat("x = factorial(130)", setup="from __main__ import factorial", number=10000))
+    list1 = timeit.repeat("x = fact(130)", setup="from __main__ import fact", number=10000)
+    list2 = timeit.repeat("x = factorial(130)", setup="from __main__ import factorial", number=10000)
+
+    print(mean(list1), stdev(list1))
+    print(mean(list2), stdev(list2))
